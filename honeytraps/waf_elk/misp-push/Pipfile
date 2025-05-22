@@ -9,7 +9,8 @@ verify_ssl = true
 pymisp = "*"
 requests = "*"
 httpx = "*"
+elasticsearch = "==6.8.2"
 elasticsearch-async = "*"
-elasticsearch = "*"
-aiohttp = "*"
+aiohttp = "==3.6.3"
+async-timeout = "==3.0.1"
 

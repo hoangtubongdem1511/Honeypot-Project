@@ -16,7 +16,7 @@ services:
       - elasticsearch
     restart: always
     extra_hosts:
-      - "elasticsearch:<ELASTIC IP ADDRESS>"
+      - "elasticsearch:192.168.120.129"
   elasticsearch:
     container_name: elasticsearch
     image: elasticsearch:7.5.1
@@ -31,7 +31,7 @@ services:
       #- logger.transport.level=trace
       - "ES_JAVA_OPTS=-Xms512m -Xmx512m"
     extra_hosts:
-      - "elasticsearch:<ELASTIC IP ADDRESS>"
+      - "elasticsearch:192.168.120.129"
     networks:
       - elastic
   kibana:
@@ -44,7 +44,7 @@ services:
     depends_on:
       - elasticsearch
     extra_hosts:
-      - "elasticsearch:<ELASTIC IP ADDRESS>"
+      - "elasticsearch:192.168.120.129"
     networks:
       - elastic
   logstash:
@@ -63,7 +63,7 @@ services:
     - PIPENV_VENV_IN_PROJECT=true
     command: logstash
     extra_hosts:
-      - "elasticsearch:<ELASTIC IP ADDRESS>"
+      - "elasticsearch:192.168.120.129"
     networks:
       - elastic
 

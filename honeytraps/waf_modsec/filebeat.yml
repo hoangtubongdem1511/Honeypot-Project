@@ -1,7 +1,7 @@
 output:
   logstash:
     enabled: true
-    hosts: '${LOGSTASH_HOST:?must set LOGSTASH_HOST env variable}'
+    hosts: ["172.18.0.5:5044"]
     timeout: 15
    
 
